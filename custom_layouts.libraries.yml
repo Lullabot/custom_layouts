@@ -1,0 +1,25 @@
+onecol_100:
+  css:
+    theme:
+      layouts/onecol/onecol.css: {}
+      css/custom.css: {}
+twocol_50_50:
+  css:
+    theme:
+      layouts/twocol_50_50/twocol_50_50.css: {}
+      css/custom.css: {}
+twocol_66_33:
+  css:
+    theme:
+      layouts/twocol_66_33/twocol_66_33.css: {}
+      css/custom.css: {}
+twocol_33_66:
+  css:
+    theme:
+      layouts/twocol_33_66/twocol_33_66.css: {}
+      css/custom.css: {}
+threecol:
+  css:
+    theme:
+      layouts/threecol/threecol.css: {}
+      css/custom.css: {}

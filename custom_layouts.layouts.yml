@@ -1,0 +1,79 @@
+layout_onecol_100:
+  label: 'One column 100'
+  path: layouts/onecol
+  template: layout--onecol
+  library: custom_layouts/onecol_100
+  category: 'Columns: 1'
+  class: '\Drupal\custom_layouts\Plugin\Layout\CustomLayout'
+  default_region: content
+  icon_map:
+    - [content]
+  regions:
+    content:
+      label: Content
+
+layout_twocol_50_50:
+  label: 'Two column 50/50'
+  path: layouts/twocol_50_50
+  template: layout--twocol-50-50
+  library: custom_layouts/twocol_50_50
+  category: 'Columns: 2'
+  class: '\Drupal\custom_layouts\Plugin\Layout\CustomLayout'
+  default_region: first
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+  icon_map:
+    - [first, second]
+
+layout_twocol_66_33:
+  label: 'Two column 66/33'
+  path: layouts/twocol_66_33
+  template: layout--twocol-66-33
+  library: custom_layouts/twocol_66_33
+  category: 'Columns: 2'
+  class: '\Drupal\custom_layouts\Plugin\Layout\CustomLayout'
+  default_region: first
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+  icon_map:
+    - [first, first, second]
+
+layout_twocol_33_66:
+  label: 'Two column 33/66'
+  path: layouts/twocol_33_66
+  template: layout--twocol-33-66
+  library: custom_layouts/twocol_33_66
+  category: 'Columns: 2'
+  class: '\Drupal\custom_layouts\Plugin\Layout\CustomLayout'
+  default_region: first
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+  icon_map:
+    - [first, second, second]
+
+layout_threecol:
+  label: 'Three column'
+  path: layouts/threecol
+  template: layout--threecol
+  library: custom_layouts/threecol
+  category: 'Columns: 3'
+  class: '\Drupal\custom_layouts\Plugin\Layout\CustomLayout'
+  default_region: second
+  icon_map:
+    - [first, second, third]
+  regions:
+    first:
+      label: 'First'
+    second:
+      label: 'Second'
+    third:
+      label: 'Third'

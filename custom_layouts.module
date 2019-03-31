@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_layouts.module.
+ */
+
+use Drupal\custom_layouts\PluginAlter;
+
+/**
+ * Implements hook_plugin_filter_TYPE__CONSUMER_alter() for block__layout_builder().
+ *
+ * Re-organize the block list.
+ *
+ * We used Block Blacklist to remove blocks we don't want to see at all. Here
+ * we re-organize the remaining blocks in a way that is appropriate for our
+ * needs. Including:
+ *   - Change some labels and categories to be more editor-friendly.
+ *   - Group blocks in a way that is meaningful for our site.
+ *   - Adjust category names so the categories appear in the right order.
+ */
+function custom_layouts_plugin_filter_block__layout_builder_alter(&$definitions, array $extra) {
+
+  foreach ($definitions as $id => &$definition) {
+    if ((string) $definition['category'] == 'Content fields') {
+      $definition['category'] = t('More Fields');
+    }
+    if ($definition['provider'] == 'views') {
+      $definition['category'] = t('Lists');
+    }
+  }
+
+  // Create a callback function to update block info.
+  $update_blocks
+    = function ($category, $blocks, $prefix = NULL) use (&$definitions) {
+      foreach ($blocks as $id => $label) {
+        $definition = &$definitions[$prefix ? "$prefix:$id" : $id];
+        $definition['category'] = $category;
+        if ($label) {
+          $definition['admin_label'] = $label;
+        }
+      }
+    };
+
+  $update_blocks(t('Add Marketing Block'), [
+    'basic_block_browser' => t('Text Block'),
+    'block_browser_cta' => t('Call to Action'),
+    'block_browser_marketing' => t('Marketing Block'),
+    'block_browser_section_callout' => t('Section Callout'),
+  ], 'entity_browser_block');
+  $update_blocks(t('Add Content'), [
+    'content_browser_modal' => t('Content Reference'),
+    'media_entity_browser_modal' => t('Media Item'),
+    'bio_browser' => t('Bio Reference'),
+  ], 'entity_browser_block');
+  $update_blocks(t('Outdated, DO NOT USE'), [
+    'connect_newsletter_block' => t('Connect/newsletter'),
+    'drupal_association_block' => t('Drupal association'),
+    'social_share_block' => t('Social Share Block'),
+    'social_share_menu' => t('Social Share Menu'),
+  ]);
+  $update_blocks(t('More Blocks'), [
+    'webform_block' => t('Webform'),
+    'system_breadcrumb_block' => t('Breadcrumb'),
+    'book_navigation' => t('Book navigation'),
+  ]);
+
+}

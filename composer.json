@@ -1,0 +1,7 @@
+{
+  "name": "lullabot/custom_layouts",
+  "description": "Drupal 8 layouts with configurable classes and titles.",
+  "type": "drupal-custom-module",
+  "homepage": "https://github.com/Lullabot/custom_layouts",
+  "keywords": ["Drupal"]
+}

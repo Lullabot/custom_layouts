@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a three column bricks layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'layout',
+    'layout--threecol',
+    settings.extra_classes,
+  ]
+%}
+{% if content %}
+  <section{{ attributes.addClass(classes) }}>
+    {% if settings.title %}
+      <{{ settings.title_element}} class="{{ settings.title_classes}}">{{ settings.title }}</{{ settings.title_element }}>
+    {% endif %}
+    <div class="layout--threecol__inner">
+      <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first', 'layout__region--row-count-3') }}>
+        {{ content.first }}
+      </div>
+
+      <div {{ region_attributes.second.addClass('layout__region', 'layout__region--second', 'layout__region--row-count-3') }}>
+        {{ content.second }}
+      </div>
+
+      <div {{ region_attributes.third.addClass('layout__region', 'layout__region--third', 'layout__region--row-count-3') }}>
+        {{ content.third }}
+      </div>
+    </div>
+  </section>
+{% endif %}

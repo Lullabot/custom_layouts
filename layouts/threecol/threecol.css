@@ -1,0 +1,20 @@
+/*
+ * @file
+ * Provides the layout styles for layout_threecol_bricks.
+ */
+.layout--threecol__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.layout--threecol__inner > .layout__region {
+  flex: 0 1 100%;
+}
+
+@media screen and (min-width: 40em) {
+  .layout--threecol__inner > .layout__region--first,
+  .layout--threecol__inner > .layout__region--second,
+  .layout--threecol__inner > .layout__region--third {
+    flex: 0 1 33%;
+  }
+}
