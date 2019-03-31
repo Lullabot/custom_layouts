@@ -9,6 +9,9 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Provides a Custom layout class.
+ */
 class CustomLayout extends LayoutDefault implements PluginFormInterface, ContainerFactoryPluginInterface {
 
   /**
@@ -17,6 +20,9 @@ class CustomLayout extends LayoutDefault implements PluginFormInterface, Contain
    * Editors will select a user-friendly term name when adding the layout, and
    * behind the scenes that term contains a field with the list of actual
    * classes that will be added to the layout.
+   *
+   * @var string
+   *   The machine name of the class vocabulary.
    */
   protected $classVid;
 
@@ -26,15 +32,23 @@ class CustomLayout extends LayoutDefault implements PluginFormInterface, Contain
    * Editors will select a user-friendly term name when adding the layout, and
    * behind the scenes that term contains a field with the list of actual
    * classes that will be added to the layout.
+   *
+   * @var string
+   *   The machine name of the title class vocabulary.
    */
   protected $titleClassVid;
 
   /**
    * The field on the vocabulary term that contains actual classes.
+   *
+   * @var string
+   *   The machine name of the vocabulary class field.
    */
   protected $classField;
 
   /**
+   * Entity Type Manager service.
+   *
    * @var Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
@@ -136,7 +150,7 @@ class CustomLayout extends LayoutDefault implements PluginFormInterface, Contain
       '#default_value' => $configuration['title_terms'],
       '#options' => $options,
       '#description' => $this->t('Select classes for the title.'),
-      '#empty_option' => $this->t(' - None - '),
+      '#empty_option' => $this->t('- None -'),
       '#empty_value' => '',
       '#multiple' => TRUE,
       '#states' => [
@@ -159,7 +173,7 @@ class CustomLayout extends LayoutDefault implements PluginFormInterface, Contain
       '#default_value' => $configuration['terms'],
       '#options' => $options,
       '#description' => $this->t('Wrap the markup for this section with one or more classes.'),
-      '#empty_option' => $this->t(' - None - '),
+      '#empty_option' => $this->t('- None -'),
       '#empty_value' => '',
       '#multiple' => TRUE,
     ];
@@ -167,10 +181,10 @@ class CustomLayout extends LayoutDefault implements PluginFormInterface, Contain
   }
 
   /**
-   * @inheritdoc
+   * {@inheritdoc}
    */
   public function validateConfigurationForm(array &$form, FormStateInterface $form_state) {
-    // any additional form validation that is required
+    // Any additional form validation that is required.
   }
 
   /**
