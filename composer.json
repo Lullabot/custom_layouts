@@ -1,6 +1,6 @@
 {
   "name": "lullabot/custom_layouts",
-  "description": "Drupal 8 layouts with configurable classes and titles.",
+  "description": "Drupal 8 layouts with configurable classes and titles, massage Layout Builder block list categories and titles.",
   "type": "drupal-custom-module",
   "homepage": "https://github.com/Lullabot/custom_layouts",
   "keywords": ["Drupal"]

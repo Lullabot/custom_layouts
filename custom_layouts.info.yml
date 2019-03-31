@@ -1,5 +1,5 @@
 name: "Custom Layouts"
-description: Drupal 8 layouts with configurable classes and titles.
+description: Drupal 8 layouts with configurable classes and titles, massage Layout Builder block list categories and titles.
 type: module
 core: 8.x
 package: Lullabot

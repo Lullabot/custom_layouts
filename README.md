@@ -5,6 +5,7 @@ Adds custom layouts to Layout Builder, which contain options to add css classes 
 - Several custom layouts are provided here, which can be further adjusted in the theme.
 - Css classes are managed via a vocabulary. There is one vocabulary for general css and another for css to use on titles.
 - We use Chosen to make the class selection super easy. That adds tags-style functionality to the simple selector.
+- The code massages the Layout Builder block list to change some category names and block titles so they make more sense in Layout Builder.
 
 ## Configuration
 
