@@ -5,8 +5,6 @@
  * Contains custom_layouts.module.
  */
 
-use Drupal\custom_layouts\PluginAlter;
-
 /**
  * Implements hook_plugin_filter_TYPE__CONSUMER_alter() for block__layout_builder().
  *
