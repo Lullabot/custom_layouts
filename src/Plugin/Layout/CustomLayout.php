@@ -49,7 +49,7 @@ class CustomLayout extends LayoutDefault implements PluginFormInterface, Contain
   /**
    * Entity Type Manager service.
    *
-   * @var Drupal\Core\Entity\EntityTypeManagerInterface
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
