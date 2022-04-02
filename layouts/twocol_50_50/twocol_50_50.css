@@ -1,4 +1,4 @@
-/*
+/**
  * @file
  * Provides the layout styles for layout_twocol_50_50.
  */
@@ -19,4 +19,3 @@
     flex: 0 1 50%;
   }
 }
-
