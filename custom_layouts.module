@@ -21,7 +21,7 @@ use Drupal\custom_layouts\PluginAlter;
  */
 function custom_layouts_plugin_filter_block__layout_builder_alter(&$definitions, array $extra) {
 
-  foreach ($definitions as $id => &$definition) {
+  foreach ($definitions as &$definition) {
     if ((string) $definition['category'] == 'Content fields') {
       $definition['category'] = t('More Fields');
     }
